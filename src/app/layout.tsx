@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-// ✅ Import Navbar from components
+// ✅ Import Navbar and Footer
 import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,9 +31,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* ✅ Navbar shows up on every page */}
+        {/* ✅ Navbar at top */}
         <Navbar />
-        <main>{children}</main>
+        
+        {/* ✅ Main content with top padding for sticky navbar */}
+        <main className="pt-20">{children}</main>
+        
+        {/* ✅ Footer at bottom */}
+        <Footer />
       </body>
     </html>
   );

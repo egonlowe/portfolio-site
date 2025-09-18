@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 export function Navbar() {
   const pathname = usePathname();
 
-  // Define nav items once so it's easy to edit later
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
@@ -16,7 +15,7 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="w-full bg-gray-800 p-4">
+    <nav className="w-full bg-gray-800 p-4 sticky top-0 z-50 shadow-md">
       <ul className="flex justify-center space-x-6">
         {navItems.map((item) => {
           const isActive = pathname === item.href;
@@ -26,7 +25,7 @@ export function Navbar() {
                 href={item.href}
                 className={`px-3 py-2 rounded-md font-medium transition-colors ${
                   isActive
-                    ? "bg-white text-black" // Active link
+                    ? "bg-white text-black"
                     : "text-gray-200 hover:bg-gray-700 hover:text-white"
                 }`}
               >
