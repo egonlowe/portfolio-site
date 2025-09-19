@@ -1,41 +1,34 @@
-export default function AboutPage() {
+export default function About() {
   return (
-    <main className="flex flex-col items-center justify-start min-h-screen text-center p-6">
-      <h1 className="text-4xl font-bold mb-6">About Me</h1>
+    <main className="flex flex-col items-center justify-start min-h-screen text-center p-6 bg-background text-foreground">
+      <h1 className="text-3xl font-bold mb-6 text-primary">About Me</h1>
 
-      <section className="max-w-3xl text-left space-y-6">
-        {/* 👇 Section 1: Introduction */}
-        <p>
-          Hi, I’m <span className="font-semibold">Ethan Lowe</span>, a{" "}
-          <span className="font-semibold">senior at Elon University </span> 
-          majoring in <span className="font-semibold">Computer Science </span> 
-          and <span className="font-semibold">Data Analytics</span>.
-        </p>
+      <p className="max-w-2xl text-lg mb-4">
+        I’m <span className="font-semibold text-accent">Ethan Lowe</span>, 
+        a current senior at <span className="font-semibold text-secondary">Elon University</span>, 
+        pursuing a double major in <span className="font-semibold text-primary">Computer Science</span> 
+        and <span className="font-semibold text-primary">Data Analytics</span>.
+      </p>
 
-        {/* 👇 Section 2: Professional Focus */}
-        <p>
-          My passion lies in building scalable, cloud-native applications. 
-          I specialize in <span className="font-semibold">AWS services</span>, 
-          data engineering, automation testing, and backend systems that turn raw data into 
-          actionable insights.
-        </p>
+      <p className="max-w-2xl text-lg mb-4">
+        My passion lies in building systems that blend{" "}
+        <span className="font-semibold text-secondary">data engineering</span>,{" "}
+        <span className="font-semibold text-secondary">cloud infrastructure</span>, 
+        and meaningful user experiences.
+      </p>
 
-        {/* 👇 Section 3: Skills */}
-        <p>
-          Over the years I’ve gained experience in languages like{" "}
-          <span className="font-semibold">SAS, R, Java, Python, C#, JavaScript,</span> 
-          and more. I also enjoy working with{" "}
-          <span className="font-semibold">React, Next.js, and cloud 
-          infrastructure tools</span>.
-        </p>
+      <p className="max-w-2xl text-lg mb-4">
+        Over the years, I’ve developed strong skills in{" "}
+        <span className="font-semibold">SAS, R, Java, Python, C#, JavaScript, SQL</span>, 
+        and have worked extensively with{" "}
+        <span className="font-semibold text-primary">AWS services</span>.
+      </p>
 
-        {/* 👇 Section 4: Personal Touch */}
-        <p>
-          Outside of coding, I’m interested in <em>content creation, keeping active, and all sorts of puzzles</em>. I believe that technology should not only be 
-          efficient and transformative, but also meaningful — solving problems that make a 
-          difference in people’s lives.
-        </p>
-      </section>
+      <p className="max-w-2xl text-lg mb-4">
+        Outside of coding, I enjoy solving tough data problems, mentoring students in 
+        statistics and programming, and exploring how technology can 
+        <span className="font-semibold text-accent"> make an impact at scale</span>.
+      </p>
     </main>
   );
 }

@@ -15,7 +15,7 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="w-full bg-gray-800 p-4 sticky top-0 z-50 shadow-md">
+    <nav className="w-full bg-primary p-4 sticky top-0 z-50 shadow-md">
       <ul className="flex justify-center space-x-6">
         {navItems.map((item) => {
           const isActive = pathname === item.href;
@@ -25,8 +25,8 @@ export function Navbar() {
                 href={item.href}
                 className={`px-3 py-2 rounded-md font-medium transition-colors ${
                   isActive
-                    ? "bg-white text-black"
-                    : "text-gray-200 hover:bg-gray-700 hover:text-white"
+                    ? "bg-accent text-text" // Active link → highlighted
+                    : "text-lightbg hover:bg-secondary hover:text-lightbg"
                 }`}
               >
                 {item.label}

@@ -1,86 +1,150 @@
-export default function ResumePage() {
+"use client";
+
+import { useState } from "react";
+
+export default function Resume() {
+  const experiences = [
+    {
+      role: "Elon University - Data Nexus Technology Ambassador",
+      date: "Sept 2025 - Present",
+      description:
+        "Provide tutoring and technical assistance to Elon students across statistics, data science, and analytics. Specializing in R, SAS, Excel, SQL, and other analytical tools. Support students in developing problem-solving approaches with data and software.",
+    },
+    {
+      role: "Old Dominion Freight Line - Data Engineer Intern",
+      date: "June 2025 - August 2025",
+      description:
+        "Worked with the QA Test Automation team to design and develop an automated testing framework using Appium and Selenium. This framework will support quality assurance efforts for newly updated mobile software and lay the foundation for future testing across ODFL's suite of mobile applications.",
+    },
+    {
+      role: "Duke University - Augmented Reality Lab Assistant",
+      date: "June 2024 - September 2024",
+      description: "Developed scripts to recreate and modify virtual maps using C# in Unity, while integrating objects to enhance user interaction. I ensured seamless user experience by allowing free movement within the maps and the ability to manipulate objects with the goal of creating a cohesive environment for humans and robots to interact seamlessly and safely with the guidance of Dr. Miroslav Pajic and Duke University graduate students.",
+    },
+    {
+      role: "Elon University - Campus Technology Support Service Desk Assitant",
+      date: "May 2024 - Present",
+      description:
+        "Core duties include responding to customer's inquiries at the service desk and Elon switchboard, researching to provide solutions for service requests, monitoring ticketing system queues, live chatting with customers, and analyzing requests to properly assign them to other ares within Information Technology among other duties assigned.",
+    },
+  ];
+
+  const certifications = [
+    {
+      name: "Advanced Data Competency Badge",
+      date: "April 2025",
+      description:
+        "Recognizes sustained academic and co-curricular engagement with data through completion of three data-intensive courses across disciplines and two approved co-curricular experiences. Includes participation in a Data Nexus-sponsored DataFest competition focused on real-world data analysis.",
+    },
+    {
+      name: "AWS Certified Data Engineer",
+      date: "September 2025",
+      description:
+        "Validates skills and knowledge in core data-related AWS services, ability to ingest and transform data, orchestrate data pipelines while applying programming concepts, design data models, manage data life cycles, and ensure data quality.",
+    },
+    {
+      name: "SAS Base Programming Specialist Certification",
+      date: "January 2025",
+      description:
+        "SAS certified professionals demonstrate expertise in reading and creating data files, generating reports with base SAS, manipulating data, and troubleshooting syntax and programming errors.",
+    },
+    {
+      name: "SAS Micro-Credential",
+      date: "May 2024",
+      description:
+        "Course dedicated to mastering the syntax for data procedures. Teaches the steps necessary to generate numerical descriptive statistics using standard procedures.",
+    },
+  ];
+
+  const [expanded, setExpanded] = useState(false);
+
   return (
-    <main className="flex flex-col items-center justify-start min-h-screen p-6">
-      <h1 className="text-4xl font-bold mb-10 text-center">My Resume</h1>
+    <main className="flex flex-col min-h-screen p-8 bg-background text-foreground space-y-16">
+      {/* Two-column section */}
+      <div className="flex flex-col md:flex-row items-start justify-start">
+        {/* Left Column → Timeline */}
+        <section className="flex-1 relative border-l-4 border-primary pl-6">
+          <h1 className="text-3xl font-bold mb-8 text-primary">Experience</h1>
+          <ul className="space-y-8">
+            {experiences.map((exp, index) => (
+              <li key={index} className="relative">
+                {/* Timeline dot */}
+                <span className="absolute -left-[34px] flex items-center justify-center w-6 h-6 rounded-full bg-accent border-4 border-background"></span>
 
-      <div className="flex w-full max-w-6xl gap-12">
-        {/* LEFT: Timeline */}
-        <section className="flex-1">
-          <h2 className="text-2xl font-bold mb-6">Experience</h2>
-          <div className="relative border-l border-gray-300 ml-4 space-y-8">
-
-            {/* Elon Data Nexus Ambassador */}
-            <div className="ml-6">
-              <div className="absolute -left-3 w-6 h-6 bg-blue-600 rounded-full border border-white"></div>
-              <h3 className="text-lg font-semibold">
-                Elon Data Nexus Technology Ambassador
-              </h3>
-              <p className="text-gray-500 text-sm">Sept 2025 – Present · Elon University</p>
-              <p className="mt-2 text-gray-700">
-                Provide one-on-one tutoring and workshop support for students working with{" "}
-                <span className="font-semibold">statistics and data tools</span>. 
-                Specialize in guiding peers through{" "}
-                <span className="font-semibold">R, SAS, Excel, SQL, and related analytics platforms</span>. 
-                Help foster data literacy across campus by assisting with assignments, research projects, 
-                and real-world problem solving, empowering students to confidently work with data.
-              </p>
-            </div>
-
-            {/* IT Intern - ODFL */}
-            <div className="ml-6">
-              <div className="absolute -left-3 w-6 h-6 bg-blue-600 rounded-full border border-white"></div>
-              <h3 className="text-lg font-semibold">IT Intern – QA Test Automation</h3>
-              <p className="text-gray-500 text-sm">June 2025 – Aug 2025 · Old Dominion Freight Line</p>
-              <p className="mt-2 text-gray-700">
-                Collaborated with the QA Test Automation team to design and develop an automated
-                testing framework using Appium and Selenium. Supported quality assurance for updated 
-                mobile applications and laid groundwork for future automated testing efforts.
-              </p>
-            </div>
-
-            {/* AR Lab Assistant */}
-            <div className="ml-6">
-              <div className="absolute -left-3 w-6 h-6 bg-blue-600 rounded-full border border-white"></div>
-              <h3 className="text-lg font-semibold">Intern – Augmented Reality Lab Assistant</h3>
-              <p className="text-gray-500 text-sm">June 2024 – Sept 2024 · Duke University</p>
-              <p className="mt-2 text-gray-700">
-                Developed scripts in C# with Unity to recreate and enhance interactive 3D maps for 
-                human-robot interaction studies under Dr. Miroslav Pajic. Focused on seamless UX, 
-                enabling free movement and manipulation of virtual objects in VR environments.
-              </p>
-            </div>
-
-            {/* Service Desk Assistant */}
-            <div className="ml-6">
-              <div className="absolute -left-3 w-6 h-6 bg-blue-600 rounded-full border border-white"></div>
-              <h3 className="text-lg font-semibold">
-                Campus Technology Support Service Desk Assistant
-              </h3>
-              <p className="text-gray-500 text-sm">May 2024 – Present · Elon University</p>
-              <p className="mt-2 text-gray-700">
-                Respond to student and faculty inquiries at the Service Desk and Switchboard. 
-                Troubleshoot technical requests, monitor ticketing queues, and provide live chat 
-                support. Assist with print checks, hardware issues, and routing cases to the appropriate teams.
-              </p>
-            </div>
-          </div>
+                {/* Timeline card */}
+                <div className="p-4 rounded-md bg-lightbg shadow">
+                  <h2 className="text-xl font-semibold text-primary">
+                    {exp.role}
+                  </h2>
+                  <p className="text-sm text-primary mb-2">{exp.date}</p>
+                  <p className="text-text">{exp.description}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
         </section>
 
-        {/* RIGHT: Sticky Download Button */}
-        <aside className="w-64 flex-shrink-0">
-          <div className="sticky top-24 bg-gray-100 border border-gray-300 rounded-md p-6 shadow">
-            <h3 className="text-lg font-semibold mb-4">Download Resume</h3>
+        {/* Right Column → Resume Download (Sticky) */}
+        <aside className="w-full md:w-1/3 md:pl-8 mt-8 md:mt-0 sticky top-20 self-start">
+          <div className="p-6 rounded-md shadow bg-lightbg border border-primary">
+            <h2 className="text-2xl font-bold mb-4 text-primary">Resume</h2>
+            <p className="mb-4 text-text">
+              Download a copy of my most recent resume for a detailed overview
+              of my professional experience, skills, and education.
+            </p>
             <a
-              href="/ResumeSept2025.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full px-6 py-3 bg-blue-600 text-white font-semibold text-center rounded-md shadow hover:bg-blue-700 transition-colors"
+              href="/EthanLowe_Resume.pdf" /* ⚠️ Place your PDF in public/ */
+              download
+              className="block px-6 py-3 bg-primary text-lightbg font-semibold rounded-md shadow hover:bg-secondary transition-colors text-center"
             >
-              PDF Version
+              Download Resume
             </a>
           </div>
         </aside>
       </div>
+
+      {/* Full-width section → Certifications & Awards */}
+      <section className="w-full mt-12">
+        <h2 className="text-3xl font-bold mb-6 text-primary">
+          Certifications & Awards
+        </h2>
+
+        {/* Animated container */}
+        <div
+          className={`grid gap-4 sm:grid-cols-2 lg:grid-cols-3 overflow-hidden transition-all duration-500 ease-in-out ${
+            expanded ? "max-h-[2000px]" : "max-h-[400px]"
+          }`}
+        >
+          {certifications.map((cert, index) => (
+            <div
+              key={index}
+              className={`p-4 bg-lightbg rounded-md shadow border border-primary transform transition-all duration-500 ease-in-out ${
+                expanded
+                  ? "opacity-100 translate-y-0 delay-200"
+                  : index > 1
+                  ? "opacity-0 -translate-y-4"
+                  : "opacity-100 translate-y-0"
+              }`}
+            >
+              <h3 className="text-lg font-semibold text-primary">
+                {cert.name}
+              </h3>
+              <p className="text-sm text-primary mb-2">{cert.date}</p>
+              <p className="text-text text-sm">{cert.description}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Expand / Collapse Button */}
+        <div className="mt-6 flex justify-center">
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="px-6 py-2 bg-primary text-lightbg font-semibold rounded-md shadow hover:bg-secondary transition-colors"
+          >
+            {expanded ? "Show Less" : "Show More"}
+          </button>
+        </div>
+      </section>
     </main>
   );
 }
