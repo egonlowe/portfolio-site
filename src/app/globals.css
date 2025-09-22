@@ -1,32 +1,18 @@
 @import "tailwindcss";
 
-/* 🌞 Light Mode Defaults */
 :root {
-  --background: #ECF39E;   /* lightest green */
-  --foreground: #132A13;   /* darkest green for text */
-}
+  /* Backgrounds */
+  --background: #EDE0D4;
+  --color-lightbg: #E6CCB2;
 
-@theme inline {
-  --color-primary: #31572C;
-  --color-secondary: #4F772D;
-  --color-accent: #90A955;
-  --color-lightbg: #ECF39E;
-  --color-text: #132A13;
+  /* Text */
+  --foreground: #7F5539;
+  --color-text: #7F5539;
 
-  /* Default Tailwind background/text mappings */
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-/* 🌙 Dark Mode Override */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #132A13;  /* darkest green */
-    --foreground: #ECF39E;  /* lightest green for text (same as navbar links) */
-  }
+  /* Brand Colors */
+  --color-primary: #B08968;
+  --color-secondary: #9C6644;
+  --color-accent: #DDB892;
 }
 
 body {
@@ -34,3 +20,26 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideOutLeft {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(-50px); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideOutRight {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(50px); }
+}
+
+.animate-slide-in-right { animation: slideInRight 0.7s ease forwards; }
+.animate-slide-out-left { animation: slideOutLeft 0.7s ease forwards; }
+.animate-slide-in-left { animation: slideInLeft 0.7s ease forwards; }
+.animate-slide-out-right { animation: slideOutRight 0.7s ease forwards; }
+

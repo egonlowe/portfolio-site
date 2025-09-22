@@ -19,13 +19,14 @@ export default function Resume() {
     {
       role: "Duke University - Augmented Reality Lab Assistant",
       date: "June 2024 - September 2024",
-      description: "Developed scripts to recreate and modify virtual maps using C# in Unity, while integrating objects to enhance user interaction. I ensured seamless user experience by allowing free movement within the maps and the ability to manipulate objects with the goal of creating a cohesive environment for humans and robots to interact seamlessly and safely with the guidance of Dr. Miroslav Pajic and Duke University graduate students.",
+      description:
+        "Developed scripts to recreate and modify virtual maps using C# in Unity, while integrating objects to enhance user interaction. Ensured seamless user experience by allowing free movement within the maps and the ability to manipulate objects. Goal: create a cohesive environment for humans and robots to interact seamlessly and safely with the guidance of Dr. Miroslav Pajic and Duke University graduate students.",
     },
     {
-      role: "Elon University - Campus Technology Support Service Desk Assitant",
+      role: "Elon University - Campus Technology Support Service Desk Assistant",
       date: "May 2024 - Present",
       description:
-        "Core duties include responding to customer's inquiries at the service desk and Elon switchboard, researching to provide solutions for service requests, monitoring ticketing system queues, live chatting with customers, and analyzing requests to properly assign them to other ares within Information Technology among other duties assigned.",
+        "Core duties include responding to customer inquiries at the service desk and Elon switchboard, researching to provide solutions for service requests, monitoring ticketing system queues, live chatting with customers, and analyzing requests to properly assign them to other areas within IT among other duties assigned.",
     },
   ];
 
@@ -58,8 +59,13 @@ export default function Resume() {
 
   const [expanded, setExpanded] = useState(false);
 
+  const defaultVisible = 3;
+  const visibleCerts = expanded
+    ? certifications
+    : certifications.slice(0, defaultVisible);
+
   return (
-    <main className="flex flex-col min-h-screen p-8 bg-background text-foreground space-y-16">
+    <main className="flex flex-col min-h-screen p-8 bg-background text-text space-y-16">
       {/* Two-column section */}
       <div className="flex flex-col md:flex-row items-start justify-start">
         {/* Left Column → Timeline */}
@@ -72,12 +78,12 @@ export default function Resume() {
                 <span className="absolute -left-[34px] flex items-center justify-center w-6 h-6 rounded-full bg-accent border-4 border-background"></span>
 
                 {/* Timeline card */}
-                <div className="p-4 rounded-md bg-lightbg shadow">
-                  <h2 className="text-xl font-semibold text-primary">
+                <div className="p-4 rounded-md bg-primary shadow border border-secondary">
+                  <h2 className="text-xl font-semibold text-lightbg">
                     {exp.role}
                   </h2>
-                  <p className="text-sm text-primary mb-2">{exp.date}</p>
-                  <p className="text-text">{exp.description}</p>
+                  <p className="text-sm text-accent mb-2">{exp.date}</p>
+                  <p className="text-lightbg">{exp.description}</p>
                 </div>
               </li>
             ))}
@@ -86,16 +92,16 @@ export default function Resume() {
 
         {/* Right Column → Resume Download (Sticky) */}
         <aside className="w-full md:w-1/3 md:pl-8 mt-8 md:mt-0 sticky top-20 self-start">
-          <div className="p-6 rounded-md shadow bg-lightbg border border-primary">
-            <h2 className="text-2xl font-bold mb-4 text-primary">Resume</h2>
-            <p className="mb-4 text-text">
+          <div className="p-6 rounded-md shadow bg-primary border border-secondary">
+            <h2 className="text-2xl font-bold mb-4 text-lightbg">Resume</h2>
+            <p className="mb-4 text-lightbg">
               Download a copy of my most recent resume for a detailed overview
               of my professional experience, skills, and education.
             </p>
             <a
-              href="/EthanLowe_Resume.pdf" /* ⚠️ Place your PDF in public/ */
+              href="/EthanLowe_Resume.pdf"
               download
-              className="block px-6 py-3 bg-primary text-lightbg font-semibold rounded-md shadow hover:bg-secondary transition-colors text-center"
+              className="block px-6 py-3 bg-secondary text-lightbg font-semibold rounded-md shadow hover:bg-accent hover:text-text transition-colors text-center"
             >
               Download Resume
             </a>
@@ -109,28 +115,28 @@ export default function Resume() {
           Certifications & Awards
         </h2>
 
-        {/* Animated container */}
         <div
           className={`grid gap-4 sm:grid-cols-2 lg:grid-cols-3 overflow-hidden transition-all duration-500 ease-in-out ${
-            expanded ? "max-h-[2000px]" : "max-h-[400px]"
+            expanded ? "max-h-[2000px]" : "max-h-[600px]"
           }`}
         >
           {certifications.map((cert, index) => (
             <div
               key={index}
-              className={`p-4 bg-lightbg rounded-md shadow border border-primary transform transition-all duration-500 ease-in-out ${
-                expanded
-                  ? "opacity-100 translate-y-0 delay-200"
-                  : index > 1
-                  ? "opacity-0 -translate-y-4"
-                  : "opacity-100 translate-y-0"
+              className={`p-4 bg-primary rounded-md shadow border border-secondary transform transition-all duration-500 ease-in-out ${
+                expanded || index < defaultVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 -translate-y-4"
               }`}
+              style={{
+                transitionDelay: expanded ? `${index * 100}ms` : "0ms",
+              }}
             >
-              <h3 className="text-lg font-semibold text-primary">
+              <h3 className="text-lg font-semibold text-lightbg">
                 {cert.name}
               </h3>
-              <p className="text-sm text-primary mb-2">{cert.date}</p>
-              <p className="text-text text-sm">{cert.description}</p>
+              <p className="text-sm text-accent mb-2">{cert.date}</p>
+              <p className="text-lightbg text-sm">{cert.description}</p>
             </div>
           ))}
         </div>

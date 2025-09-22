@@ -1,34 +1,39 @@
-export default function About() {
+export default function AboutPage() {
   return (
-    <main className="flex flex-col items-center justify-start min-h-screen text-center p-6 bg-background text-foreground">
-      <h1 className="text-3xl font-bold mb-6 text-primary">About Me</h1>
+    <main className="flex flex-col items-center min-h-screen p-8 bg-background text-text">
+      <h1 className="text-4xl font-bold mb-6 text-primary">About Me</h1>
 
-      <p className="max-w-2xl text-lg mb-4">
-        I’m <span className="font-semibold text-accent">Ethan Lowe</span>, 
-        a current senior at <span className="font-semibold text-secondary">Elon University</span>, 
-        pursuing a double major in <span className="font-semibold text-primary">Computer Science</span> 
-        and <span className="font-semibold text-primary">Data Analytics</span>.
-      </p>
+      <section className="max-w-3xl space-y-6 text-lg">
+        <p>
+          Hello! I’m <span className="font-semibold text-accent">Ethan Lowe</span>, a
+          dedicated <span className="font-semibold text-primary">AWS-focused Data Engineer</span>{" "}
+          and a current <span className="font-semibold text-accent">senior at Elon University</span>{" "}
+          majoring in Computer Science and Data Analytics.
+        </p>
 
-      <p className="max-w-2xl text-lg mb-4">
-        My passion lies in building systems that blend{" "}
-        <span className="font-semibold text-secondary">data engineering</span>,{" "}
-        <span className="font-semibold text-secondary">cloud infrastructure</span>, 
-        and meaningful user experiences.
-      </p>
+        <p>
+          I thrive at the intersection of{" "}
+          <span className="font-semibold text-secondary">data, cloud infrastructure,</span> and{" "}
+          <span className="font-semibold text-secondary">scalable software systems</span>. My
+          experiences range from building academic projects to industry internships where I’ve
+          contributed to automation frameworks, database pipelines, and cloud-native solutions.
+        </p>
 
-      <p className="max-w-2xl text-lg mb-4">
-        Over the years, I’ve developed strong skills in{" "}
-        <span className="font-semibold">SAS, R, Java, Python, C#, JavaScript, SQL</span>, 
-        and have worked extensively with{" "}
-        <span className="font-semibold text-primary">AWS services</span>.
-      </p>
+        <p>
+          Beyond academics and engineering, I’m passionate about{" "}
+          <span className="font-semibold text-accent">helping others learn and succeed</span>. As a
+          Technology Ambassador for Elon’s Data Nexus, I provide tutoring and support in{" "}
+          <span className="font-semibold text-primary">R, SAS, Excel, SQL,</span> and other tools,
+          ensuring students build confidence with analytics and problem-solving.
+        </p>
 
-      <p className="max-w-2xl text-lg mb-4">
-        Outside of coding, I enjoy solving tough data problems, mentoring students in 
-        statistics and programming, and exploring how technology can 
-        <span className="font-semibold text-accent"> make an impact at scale</span>.
-      </p>
+        <p>
+          Outside of tech, I enjoy exploring how{" "}
+          <span className="font-semibold text-secondary">technology impacts everyday life</span> and
+          seeking opportunities to combine my analytical mindset with creativity to deliver
+          meaningful solutions.
+        </p>
+      </section>
     </main>
   );
 }

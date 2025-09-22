@@ -1,36 +1,181 @@
+"use client";
+import { useState, useEffect } from "react";
+import Image from "next/image";
+
 export default function Home() {
+  const news = [
+    {
+      title: "Attended the 2025 Southeastern SAS Users Group Convention",
+      date: "September 22-24, 2025",
+      description:
+        "I’m attending the SESUG Conference, a regional event for SAS users in the southeastern U.S. The conference offers workshops, presentations, and networking opportunities to build skills and connect with the SAS community.",
+      image: null,
+    },
+    {
+      title: "____ Project Begins Development",
+      date: "August 2025",
+      description:
+        "Development for _____, an Apple Watch “likes” prototype inspired by Death Stranding, is officially underway! The first phase focuses on wrist-based interactions with responsive haptics, animations, and sound effects. Stay tuned as we bring this immersive experience to life.",
+      image: "/aws-cert.png",
+    },
+    {
+      title: "Concluded ODFL Summer Internship",
+      date: "June 2025 - August 2025",
+      description:
+        "Concluded my ODFL Summer Internship, where I worked with the QA Automation team to develop a testing framework for mobile software. Gained hands-on experience in automation, quality assurance processes, and building tools that improve software reliability.",
+      image: "/duke-research.jpg",
+    },
+  ];
+
+  const [current, setCurrent] = useState(0);
+
+  const prevNews = () =>
+    setCurrent((prev) => (prev === 0 ? news.length - 1 : prev - 1));
+
+  const nextNews = () =>
+    setCurrent((prev) => (prev === news.length - 1 ? 0 : prev + 1));
+
+  // Auto-slide every 15 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev === news.length - 1 ? 0 : prev + 1));
+    }, 15000);
+    return () => clearInterval(interval);
+  }, [news.length]);
+
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen text-center p-6 bg-background text-foreground">
-      <h1 className="text-4xl font-bold mb-4 text-primary">👋 Hi, I’m Ethan Lowe</h1>
+    <main className="flex flex-col w-full">
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-center min-h-screen bg-primary text-lightbg text-center p-6">
+        <h1 className="text-6xl font-bold mb-4">👋 Hi, I’m Ethan Lowe</h1>
+        <p className="text-xl">AWS-Focused Data Engineer | Elon University</p>
+      </section>
 
-      <p className="max-w-2xl text-lg mb-4">
-        I’m an{" "}
-        <span className="font-semibold text-accent">AWS-focused Data Engineer</span> and 
-        a current <span className="font-semibold text-accent">senior at Elon University</span>, 
-        double majoring in Computer Science and Data Analytics.
-      </p>
+      {/* About Section */}
+      <section className="flex flex-col md:flex-row items-center justify-center min-h-[70vh] p-8 bg-lightbg text-text gap-8">
+        {/* Text */}
+        <div className="flex-1 text-left max-w-xl">
+          <h2 className="text-3xl font-bold mb-4 text-primary">About Me</h2>
+          <p className="mb-4">
+            I’m an{" "}
+            <span className="font-semibold text-accent">
+              AWS-focused Data Engineer
+            </span>{" "}
+            and a{" "}
+            <span className="font-semibold text-accent">
+              senior at Elon University
+            </span>
+            , double majoring in Computer Science and Data Analytics.
+          </p>
+          <p className="mb-4">
+            I love building scalable systems and web applications that bridge
+            the gap between{" "}
+            <span className="font-semibold text-secondary">
+              data, cloud infrastructure,
+            </span>{" "}
+            and{" "}
+            <span className="font-semibold text-secondary">
+              real-world impact.
+            </span>
+          </p>
+          <p className="mb-8">
+            My technical toolkit includes{" "}
+            <span className="font-semibold">
+              SAS, R, Java, Python, C#, JavaScript
+            </span>{" "}
+            and more — with strong experience in{" "}
+            <span className="font-semibold text-primary">AWS services</span> for
+            scalable, secure systems.
+          </p>
 
-      <p className="max-w-2xl text-lg mb-4">
-        I love building scalable systems and web applications that bridge the gap between{" "}
-        <span className="font-semibold text-secondary">data, cloud infrastructure,</span> and{" "}
-        <span className="font-semibold text-secondary">real-world impact.</span>
-      </p>
+          <a
+            href="/about"
+            className="px-6 py-3 bg-primary text-lightbg font-semibold rounded-md shadow hover:bg-secondary transition-colors"
+          >
+            About Me
+          </a>
+        </div>
 
-      <p className="max-w-2xl text-lg mb-8">
-        My technical toolkit includes{" "}
-        <span className="font-semibold">
-          SAS, R, Java, Python, C#, JavaScript
-        </span>{" "}
-        and many more — with strong experience in{" "}
-        <span className="font-semibold text-primary">AWS services</span> for scalable, secure systems.
-      </p>
+        {/* Headshot */}
+        <div className="flex-1 flex justify-center">
+          <Image
+            src="/headshot.jpg" // ⚠️ Add file to /public
+            alt="Ethan Lowe"
+            width={300}
+            height={300}
+            className="rounded-full shadow-lg border-4 border-primary"
+          />
+        </div>
+      </section>
 
-      <a
-        href="/resume"
-        className="px-6 py-3 bg-primary text-lightbg font-semibold rounded-md shadow hover:bg-secondary transition-colors"
-      >
-        View My Resume
-      </a>
+      {/* Recent News Section */}
+      <section className="flex flex-col items-center justify-center min-h-[70vh] p-8 bg-background text-text">
+        <h2 className="text-3xl font-bold mb-8 text-primary">Recent News</h2>
+
+        <div className="relative w-2/3 min-h-[350px]">
+          {news.map((item, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 p-8 bg-lightbg/90 rounded-xl shadow-xl border border-primary flex items-center transition-opacity duration-700 ease-in-out ${
+                index === current ? "opacity-100 z-10" : "opacity-0 z-0"
+              }`}
+            >
+              {/* Left Column */}
+              <div
+                className={`pr-6 ${item.image ? "flex-1" : "w-full"} text-left`}
+              >
+                <h3 className="text-2xl font-bold text-primary mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-secondary mb-4">{item.date}</p>
+                <p className="text-text text-lg">{item.description}</p>
+              </div>
+
+              {/* Right Column - Image */}
+              {item.image && (
+                <div className="flex-1 h-full flex items-center justify-center">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={300}
+                    height={200}
+                    className="rounded-lg shadow-md object-cover"
+                  />
+                </div>
+              )}
+            </div>
+          ))}
+
+          {/* Arrows */}
+          <button
+            onClick={prevNews}
+            className="absolute left-[-70px] top-1/2 -translate-y-1/2 z-20 px-4 py-2 bg-primary text-lightbg rounded-full shadow hover:bg-secondary transition"
+          >
+            ←
+          </button>
+          <button
+            onClick={nextNews}
+            className="absolute right-[-70px] top-1/2 -translate-y-1/2 z-20 px-4 py-2 bg-primary text-lightbg rounded-full shadow hover:bg-secondary transition"
+          >
+            →
+          </button>
+        </div>
+
+        {/* Dot Indicators */}
+        <div className="flex justify-center mt-6 space-x-3 relative z-30">
+          {news.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrent(index)}
+              className={`w-4 h-4 rounded-full transition ${
+                index === current
+                  ? "bg-primary scale-110"
+                  : "bg-[#9C6644] hover:bg-[#7F5539]"
+              }`}
+            />
+          ))}
+        </div>
+      </section>
     </main>
   );
 }
