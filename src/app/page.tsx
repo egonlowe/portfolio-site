@@ -9,21 +9,21 @@ export default function Home() {
       date: "September 22-24, 2025",
       description:
         "I’m attending the SESUG Conference, a regional event for SAS users in the southeastern U.S. The conference offers workshops, presentations, and networking opportunities to build skills and connect with the SAS community.",
-      image: null,
+      image: "/recentNews/SESUG.jpg",
     },
     {
       title: "____ Project Begins Development",
       date: "August 2025",
       description:
         "Development for _____, an Apple Watch “likes” prototype inspired by Death Stranding, is officially underway! The first phase focuses on wrist-based interactions with responsive haptics, animations, and sound effects. Stay tuned as we bring this immersive experience to life.",
-      image: "/aws-cert.png",
+      image: "",
     },
     {
       title: "Concluded ODFL Summer Internship",
       date: "June 2025 - August 2025",
       description:
         "Concluded my ODFL Summer Internship, where I worked with the QA Automation team to develop a testing framework for mobile software. Gained hands-on experience in automation, quality assurance processes, and building tools that improve software reliability.",
-      image: "/duke-research.jpg",
+      image: "/recentNews/ODFL_Interns.jpeg",
     },
   ];
 
@@ -52,9 +52,9 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="flex flex-col md:flex-row items-center justify-center min-h-[70vh] p-8 bg-lightbg text-text gap-8">
+      <section className="flex flex-col md:flex-row items-center justify-center min-h-[70vh] p-8 bg-lightbg text-text gap-12 max-w-6xl mx-auto">
         {/* Text */}
-        <div className="flex-1 text-left max-w-xl">
+        <div className="flex-1 text-left max-w-lg">
           <h2 className="text-3xl font-bold mb-4 text-primary">About Me</h2>
           <p className="mb-4">
             I’m an{" "}
@@ -99,11 +99,11 @@ export default function Home() {
         {/* Headshot */}
         <div className="flex-1 flex justify-center">
           <Image
-            src="/headshot.jpg" // ⚠️ Add file to /public
+            src="/headshots/elowe7-1.png"
             alt="Ethan Lowe"
-            width={300}
-            height={300}
-            className="rounded-full shadow-lg border-4 border-primary"
+            width={360} // 🔼 increased size
+            height={360} // 🔼 increased size
+            className="rounded-full shadow-lg border-4 border-primary scale-105"
           />
         </div>
       </section>
@@ -170,7 +170,7 @@ export default function Home() {
               className={`w-4 h-4 rounded-full transition ${
                 index === current
                   ? "bg-primary scale-110"
-                  : "bg-[#9C6644] hover:bg-[#7F5539]"
+                  : "bg-[#7F5539] hover:bg-[#9C6644]"
               }`}
             />
           ))}

@@ -10,15 +10,28 @@ export default function ContactPage() {
   });
   const [status, setStatus] = useState<null | "success" | "error">(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      console.log("Form submitted:", formData);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // Build mailto link
+      const subject = encodeURIComponent(
+        `Portfolio Inquiry from ${formData.name}`
+      );
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      );
+      const mailtoLink = `mailto:ethan.lowe1304@gmail.com?subject=${subject}&body=${body}`;
+
+      // Open mail client
+      window.location.href = mailtoLink;
+
+      // Reset and show success
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
@@ -30,8 +43,7 @@ export default function ContactPage() {
   return (
     <main className="flex flex-col items-center min-h-screen p-8 bg-background text-foreground">
       <h1 className="text-3xl font-bold mb-6 text-primary">Contact Me</h1>
-      
-      {/* ✅ Fixed intro text to be adaptive */}
+
       <p className="mb-8 max-w-xl text-center text-foreground">
         I’d love to hear from you! Whether you have a question, an opportunity,
         or just want to say hi, feel free to send me a message.
@@ -43,7 +55,10 @@ export default function ContactPage() {
       >
         {/* Name */}
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-primary">
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-primary"
+          >
             Name
           </label>
           <input
@@ -59,7 +74,10 @@ export default function ContactPage() {
 
         {/* Email */}
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-primary">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-primary"
+          >
             Email
           </label>
           <input
@@ -75,7 +93,10 @@ export default function ContactPage() {
 
         {/* Message */}
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-primary">
+          <label
+            htmlFor="message"
+            className="block text-sm font-medium text-primary"
+          >
             Message
           </label>
           <textarea
@@ -99,10 +120,14 @@ export default function ContactPage() {
 
         {/* Status message */}
         {status === "success" && (
-          <p className="text-accent font-medium mt-2">✅ Message sent successfully!</p>
+          <p className="text-accent font-medium mt-2">
+            ✅ Your mail client should have opened — message ready to send!
+          </p>
         )}
         {status === "error" && (
-          <p className="text-red-600 font-medium mt-2">❌ Something went wrong. Please try again.</p>
+          <p className="text-red-600 font-medium mt-2">
+            ❌ Something went wrong. Please try again.
+          </p>
         )}
       </form>
     </main>

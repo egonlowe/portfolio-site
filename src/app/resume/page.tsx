@@ -60,22 +60,19 @@ export default function Resume() {
   const [expanded, setExpanded] = useState(false);
 
   const defaultVisible = 3;
-  const visibleCerts = expanded
-    ? certifications
-    : certifications.slice(0, defaultVisible);
 
   return (
     <main className="flex flex-col min-h-screen p-8 bg-background text-text space-y-16">
       {/* Two-column section */}
       <div className="flex flex-col md:flex-row items-start justify-start">
         {/* Left Column → Timeline */}
-        <section className="flex-1 relative border-l-4 border-primary pl-6">
+        <section className="flex-1 relative border-l-4 border-primary pl-10">
           <h1 className="text-3xl font-bold mb-8 text-primary">Experience</h1>
           <ul className="space-y-8">
             {experiences.map((exp, index) => (
               <li key={index} className="relative">
-                {/* Timeline dot */}
-                <span className="absolute -left-[34px] flex items-center justify-center w-6 h-6 rounded-full bg-accent border-4 border-background"></span>
+                {/* Timeline dot (centered & filled) */}
+                <span className="absolute -left-[43px] top-6 w-6 h-6 rounded-full bg-accent border-4 border-primary"></span>
 
                 {/* Timeline card */}
                 <div className="p-4 rounded-md bg-primary shadow border border-secondary">
@@ -99,7 +96,9 @@ export default function Resume() {
               of my professional experience, skills, and education.
             </p>
             <a
-              href="/EthanLowe_Resume.pdf"
+              href="/files/ResumeSept2025.pdf" // <-- File goes in public/files/
+              target="_blank"
+              rel="noopener noreferrer"
               download
               className="block px-6 py-3 bg-secondary text-lightbg font-semibold rounded-md shadow hover:bg-accent hover:text-text transition-colors text-center"
             >
