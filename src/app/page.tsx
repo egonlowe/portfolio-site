@@ -12,10 +12,10 @@ export default function Home() {
       image: "/recentNews/SESUG.jpg",
     },
     {
-      title: "____ Project Begins Development",
+      title: "ThumbsUp Project Begins Development",
       date: "August 2025",
       description:
-        "Development for _____, an Apple Watch “likes” prototype inspired by Death Stranding, is officially underway! The first phase focuses on wrist-based interactions with responsive haptics, animations, and sound effects. Stay tuned as we bring this immersive experience to life.",
+        "Development for ThumbsUp, an Apple Watch “likes” prototype inspired by Death Stranding, is officially underway! The first phase focuses on wrist-based interactions with responsive haptics, animations, and sound effects. Stay tuned as I bring this immersive experience to life.",
       image: "",
     },
     {
