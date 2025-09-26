@@ -62,7 +62,7 @@ export default function Resume() {
   const defaultVisible = 3;
 
   return (
-    <main className="flex flex-col min-h-screen p-8 bg-background text-text space-y-16">
+    <main className="flex flex-col min-h-screen p-8 bg-[#CAD2C5] text-text space-y-16">
       {/* Two-column section */}
       <div className="flex flex-col md:flex-row items-start justify-start">
         {/* Left Column → Timeline */}
@@ -71,16 +71,16 @@ export default function Resume() {
           <ul className="space-y-8">
             {experiences.map((exp, index) => (
               <li key={index} className="relative">
-                {/* Timeline dot (centered & filled) */}
-                <span className="absolute -left-[43px] top-6 w-6 h-6 rounded-full bg-accent border-4 border-primary"></span>
+                {/* Timeline dot (filled, aligned) */}
+                <span className="absolute -left-[45px] top-6 w-6 h-6 rounded-full bg-primary border-2 border-primary"></span>
 
                 {/* Timeline card */}
-                <div className="p-4 rounded-md bg-primary shadow border border-secondary">
-                  <h2 className="text-xl font-semibold text-lightbg">
+                <div className="p-4 rounded-md bg-[#84A98C] shadow border border-primary">
+                  <h2 className="text-xl font-semibold text-[#2F3E46]">
                     {exp.role}
                   </h2>
-                  <p className="text-sm text-accent mb-2">{exp.date}</p>
-                  <p className="text-lightbg">{exp.description}</p>
+                  <p className="text-sm text-[#354F52] mb-2">{exp.date}</p>
+                  <p className="text-[#2F3E46]">{exp.description}</p>
                 </div>
               </li>
             ))}
@@ -89,18 +89,18 @@ export default function Resume() {
 
         {/* Right Column → Resume Download (Sticky) */}
         <aside className="w-full md:w-1/3 md:pl-8 mt-8 md:mt-0 sticky top-20 self-start">
-          <div className="p-6 rounded-md shadow bg-primary border border-secondary">
-            <h2 className="text-2xl font-bold mb-4 text-lightbg">Resume</h2>
-            <p className="mb-4 text-lightbg">
+          <div className="p-6 rounded-md shadow bg-[#84A98C] border border-primary">
+            <h2 className="text-2xl font-bold mb-4 text-[#2F3E46]">Resume</h2>
+            <p className="mb-4 text-[#2F3E46]">
               Download a copy of my most recent resume for a detailed overview
               of my professional experience, skills, and education.
             </p>
             <a
-              href="/files/ResumeSept2025.pdf" // <-- File goes in public/files/
+              href="/files/ResumeSept2025.pdf"
               target="_blank"
               rel="noopener noreferrer"
               download
-              className="block px-6 py-3 bg-secondary text-lightbg font-semibold rounded-md shadow hover:bg-accent hover:text-text transition-colors text-center"
+              className="block px-6 py-3 bg-primary text-lightbg font-semibold rounded-md shadow hover:bg-secondary hover:text-lightbg transition-colors text-center"
             >
               Download Resume
             </a>
@@ -122,7 +122,7 @@ export default function Resume() {
           {certifications.map((cert, index) => (
             <div
               key={index}
-              className={`p-4 bg-primary rounded-md shadow border border-secondary transform transition-all duration-500 ease-in-out ${
+              className={`p-4 bg-[#84A98C] rounded-md shadow border border-primary transform transition-all duration-500 ease-in-out ${
                 expanded || index < defaultVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 -translate-y-4"
@@ -131,11 +131,11 @@ export default function Resume() {
                 transitionDelay: expanded ? `${index * 100}ms` : "0ms",
               }}
             >
-              <h3 className="text-lg font-semibold text-lightbg">
+              <h3 className="text-lg font-semibold text-[#2F3E46]">
                 {cert.name}
               </h3>
-              <p className="text-sm text-accent mb-2">{cert.date}</p>
-              <p className="text-lightbg text-sm">{cert.description}</p>
+              <p className="text-sm text-[#354F52] mb-2">{cert.date}</p>
+              <p className="text-[#2F3E46] text-sm">{cert.description}</p>
             </div>
           ))}
         </div>

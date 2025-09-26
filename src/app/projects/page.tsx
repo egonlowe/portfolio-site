@@ -9,9 +9,9 @@ export default function ProjectsPage() {
       description:
         "An Apple Watch app prototype inspired by the 'likes' system in Death Stranding. This app allows users to send 'likes' to one another over local AirDrop connections, triggered by natural hand and wrist movements resembling a thumbs-up gesture. The goal is to bring a playful, gamified way of expressing gratitude to everyday interactions.",
       tech: ["Swift", "WatchOS", "Motion Sensors", "Haptics"],
-      image: "/projects/likesSimulator.png", // add screenshot or placeholder to /public/projects/
-      github: "https://github.com/yourusername/LikesSimulator", // optional placeholder until repo is ready
-      demo: null, // not live yet
+      image: "/projects/likesSimulator.png",
+      github: "https://github.com/yourusername/LikesSimulator", // placeholder
+      demo: null,
       status: "In Development",
       snippet: `
 // Motion detection logic (SwiftUI + CoreMotion)
@@ -22,16 +22,16 @@ motionManager.startDeviceMotionUpdates(to: .main) { motion, error in
     }
   }
 }
-`
+`,
     },
     {
       title: "Office Space Rent Predictor",
       description:
         "A Shiny web app built using R to predict commercial lease prices based on building size, industry type, move type, and location. Uses real data from the 2025 Elon Data Nexus DataFest competition.",
       tech: ["R", "Shiny", "Data Visualization", "Predictive Modeling"],
-      image: "/projects/ShinyAppScreenshot.png", // add to /public/projects/
+      image: "/projects/ShinyAppScreenshot.png",
       github: "https://github.com/egonlowe/shinyApp-leasePredict",
-      demo: "https://elowe.shinyapps.io/OfficeSpaceRentPredictor/", // optional
+      demo: "https://elowe.shinyapps.io/OfficeSpaceRentPredictor/",
       snippet: `
 library(shiny)
 ui <- fluidPage(
@@ -46,13 +46,13 @@ ui <- fluidPage(
     )
   )
 )
-`
+`,
     },
-    // 👉 add more projects here in the same format
   ];
 
   return (
     <main className="flex flex-col w-full">
+      {/* Hero section */}
       <section className="flex flex-col items-center justify-center min-h-[40vh] bg-primary text-lightbg text-center p-6">
         <h1 className="text-5xl font-bold mb-4">My Projects</h1>
         <p className="text-lg max-w-2xl">
@@ -61,11 +61,12 @@ ui <- fluidPage(
         </p>
       </section>
 
+      {/* Project entries */}
       {projects.map((project, index) => (
         <section
           key={index}
           className={`flex flex-col md:flex-row items-center justify-between min-h-[60vh] p-12 gap-8 ${
-            index % 2 === 0 ? "bg-[#EDE0D4]" : "bg-[#E6CCB2]"
+            index % 2 === 0 ? "bg-[#CAD2C5]" : "bg-[#84A98C]"
           }`}
         >
           {/* Left column - text */}

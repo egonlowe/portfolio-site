@@ -109,73 +109,74 @@ export default function Home() {
       </section>
 
       {/* Recent News Section */}
-      <section className="flex flex-col items-center justify-center min-h-[70vh] p-8 bg-background text-text">
-        <h2 className="text-3xl font-bold mb-8 text-primary">Recent News</h2>
+<section className="flex flex-col items-center justify-center min-h-[70vh] p-8 bg-background text-text">
+  <h2 className="text-3xl font-bold mb-8 text-primary">Recent News</h2>
 
-        <div className="relative w-2/3 min-h-[350px]">
-          {news.map((item, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0 p-8 bg-lightbg/90 rounded-xl shadow-xl border border-primary flex items-center transition-opacity duration-700 ease-in-out ${
-                index === current ? "opacity-100 z-10" : "opacity-0 z-0"
-              }`}
-            >
-              {/* Left Column */}
-              <div
-                className={`pr-6 ${item.image ? "flex-1" : "w-full"} text-left`}
-              >
-                <h3 className="text-2xl font-bold text-primary mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-secondary mb-4">{item.date}</p>
-                <p className="text-text text-lg">{item.description}</p>
-              </div>
-
-              {/* Right Column - Image */}
-              {item.image && (
-                <div className="flex-1 h-full flex items-center justify-center">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    width={300}
-                    height={200}
-                    className="rounded-lg shadow-md object-cover"
-                  />
-                </div>
-              )}
-            </div>
-          ))}
-
-          {/* Arrows */}
-          <button
-            onClick={prevNews}
-            className="absolute left-[-70px] top-1/2 -translate-y-1/2 z-20 px-4 py-2 bg-primary text-lightbg rounded-full shadow hover:bg-secondary transition"
-          >
-            ←
-          </button>
-          <button
-            onClick={nextNews}
-            className="absolute right-[-70px] top-1/2 -translate-y-1/2 z-20 px-4 py-2 bg-primary text-lightbg rounded-full shadow hover:bg-secondary transition"
-          >
-            →
-          </button>
+  <div className="relative w-2/3 min-h-[350px]">
+    {news.map((item, index) => (
+      <div
+        key={index}
+        className={`absolute inset-0 p-8 rounded-xl shadow-xl border border-primary flex items-center transition-opacity duration-700 ease-in-out ${
+          index === current ? "opacity-100 z-10" : "opacity-0 z-0"
+        }`}
+        style={{ backgroundColor: "var(--color-lightbg)" }}
+      >
+        {/* Left Column */}
+        <div
+          className={`pr-6 ${item.image ? "flex-1" : "w-full"} text-left`}
+        >
+          <h3 className="text-2xl font-bold text-primary mb-2">
+            {item.title}
+          </h3>
+          <p className="text-sm text-secondary mb-4">{item.date}</p>
+          <p className="text-text text-lg">{item.description}</p>
         </div>
 
-        {/* Dot Indicators */}
-        <div className="flex justify-center mt-6 space-x-3 relative z-30">
-          {news.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrent(index)}
-              className={`w-4 h-4 rounded-full transition ${
-                index === current
-                  ? "bg-primary scale-110"
-                  : "bg-[#7F5539] hover:bg-[#9C6644]"
-              }`}
+        {/* Right Column - Image */}
+        {item.image && (
+          <div className="flex-1 h-full flex items-center justify-center">
+            <Image
+              src={item.image}
+              alt={item.title}
+              width={300}
+              height={200}
+              className="rounded-lg shadow-md object-cover"
             />
-          ))}
-        </div>
-      </section>
+          </div>
+        )}
+      </div>
+    ))}
+
+    {/* Arrows */}
+    <button
+      onClick={prevNews}
+      className="absolute left-[-70px] top-1/2 -translate-y-1/2 z-20 px-4 py-2 bg-primary text-lightbg rounded-full shadow hover:bg-secondary transition"
+    >
+      ←
+    </button>
+    <button
+      onClick={nextNews}
+      className="absolute right-[-70px] top-1/2 -translate-y-1/2 z-20 px-4 py-2 bg-primary text-lightbg rounded-full shadow hover:bg-secondary transition"
+    >
+      →
+    </button>
+  </div>
+
+  {/* Dot Indicators */}
+<div className="flex justify-center mt-6 space-x-3 relative z-30">
+  {news.map((_, index) => (
+    <button
+      key={index}
+      onClick={() => setCurrent(index)}
+      className={`w-4 h-4 rounded-full border-2 transition ${
+        index === current
+          ? "bg-transparent border-[var(--color-primary)] scale-110"
+          : "bg-[var(--color-primary)] border-[var(--color-primary)] hover:bg-[var(--foreground)]"
+      }`}
+    />
+  ))}
+</div>
+</section>
     </main>
   );
 }

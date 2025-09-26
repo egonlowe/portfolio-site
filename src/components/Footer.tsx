@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="bg-[#9C6644] text-lightbg py-6 mt-12">
+    <footer className="bg-[var(--color-secondary)] text-[var(--foreground)] py-6 mt-12">
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
         {/* Left side */}
         <p className="text-sm">
@@ -13,7 +13,7 @@ export function Footer() {
             href="https://github.com/egonlowe"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-accent hover:underline transition-colors"
+            className="hover:underline"
           >
             GitHub
           </a>
@@ -21,14 +21,11 @@ export function Footer() {
             href="https://linkedin.com/in/ethanjlowe"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-accent hover:underline transition-colors"
+            className="hover:underline"
           >
             LinkedIn
           </a>
-          <a
-            href="mailto:ethan.lowe1304@gmail.com"
-            className="hover:text-accent hover:underline transition-colors"
-          >
+          <a href="mailto:ethan.lowe1304@gmail.com" className="hover:underline">
             Email
           </a>
         </div>
