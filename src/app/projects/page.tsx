@@ -25,6 +25,18 @@ motionManager.startDeviceMotionUpdates(to: .main) { motion, error in
 `,
     },
     {
+      title: "BreakOut!",
+      description:
+        "A project for software design in which we were tasked to recreate the ever-popular game breakout.",
+      tech: ["Java", "JavaFX"],
+      image: "/projects/likesSimulator.png",
+      github: "https://github.com/yourusername/LikesSimulator", // placeholder
+      demo: null,
+      status: "In Development",
+      snippet: `
+`,
+    },
+    {
       title: "Office Space Rent Predictor",
       description:
         "A Shiny web app built using R to predict commercial lease prices based on building size, industry type, move type, and location. Uses real data from the 2025 Elon Data Nexus DataFest competition.",
@@ -48,11 +60,39 @@ ui <- fluidPage(
 )
 `,
     },
+   {
+      title: "NBA Analytics - Indiana Pacers Assist Efficiency",
+      description:
+        "A Google Colab project and research paper analyzing the assist distribution of the 2023–24 Indiana Pacers, before and after the Pascal Siakam trade. Using gramian matrices, I quantified passing relationships to measure changes in offensive flow, identified which players became the most common assist targets, and highlighted how roster moves impacted team efficiency.",
+      tech: ["Python", "Google Colab", "Pandas", "Matplotlib", "Seaborn"],
+      image: "/projects/obiToppin.jpeg",
+      github: "https://github.com/egonlowe/pacersAssists",
+      demo: null,
+      paper: "/files/pacersOffensiveEfficiency.pdf",
+      snippet: `
+import pandas as pd
+import numpy as np
+
+# Load dataset
+df = pd.read_csv("pacers_assists.csv")
+
+# Build gramian matrix: passer (rows) × receiver (cols)
+players = sorted(df["passer"].unique())
+gram_matrix = pd.DataFrame(
+    0, index=players, columns=players
+)
+
+for _, row in df.iterrows():
+    gram_matrix.loc[row["passer"], row["receiver"]] += 1
+
+print(gram_matrix.head())
+`
+    },
   ];
 
   return (
     <main className="flex flex-col w-full">
-      {/* Hero section */}
+      {/* Hero Section */}
       <section className="flex flex-col items-center justify-center min-h-[40vh] bg-primary text-lightbg text-center p-6">
         <h1 className="text-5xl font-bold mb-4">My Projects</h1>
         <p className="text-lg max-w-2xl">
@@ -61,7 +101,7 @@ ui <- fluidPage(
         </p>
       </section>
 
-      {/* Project entries */}
+      {/* Project Sections */}
       {projects.map((project, index) => (
         <section
           key={index}
@@ -77,6 +117,7 @@ ui <- fluidPage(
               <strong>Tech:</strong> {project.tech.join(", ")}
             </p>
 
+            {/* Buttons */}
             <div className="flex space-x-4 mt-4">
               {project.github && (
                 <a
@@ -96,6 +137,16 @@ ui <- fluidPage(
                   className="px-4 py-2 bg-accent text-text rounded-md shadow hover:bg-secondary hover:text-lightbg transition"
                 >
                   Live Demo
+                </a>
+              )}
+              {project.paper && (
+                <a
+                  href={project.paper}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-secondary text-lightbg rounded-md shadow hover:bg-accent hover:text-text transition"
+                >
+                  Read Paper
                 </a>
               )}
             </div>

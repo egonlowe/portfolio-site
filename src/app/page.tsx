@@ -16,7 +16,7 @@ export default function Home() {
       date: "August 2025",
       description:
         "Development for ThumbsUp, an Apple Watch “likes” prototype inspired by Death Stranding, is officially underway! The first phase focuses on wrist-based interactions with responsive haptics, animations, and sound effects. Stay tuned as I bring this immersive experience to life.",
-      image: "",
+      image: "/recentNews/SamDeathStranding.png",
     },
     {
       title: "Concluded ODFL Summer Internship",
@@ -48,7 +48,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center min-h-screen bg-primary text-lightbg text-center p-6">
         <h1 className="text-6xl font-bold mb-4">👋 Hi, I’m Ethan Lowe</h1>
-        <p className="text-xl">AWS-Focused Data Engineer | Elon University</p>
+        <p className="text-xl">Data Engineer, Automation Tester | Elon University</p>
       </section>
 
       {/* About Section */}

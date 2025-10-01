@@ -12,6 +12,7 @@ export function Navbar() {
     { href: "/projects", label: "Projects" },
     { href: "/contact", label: "Contact" },
     { href: "/resume", label: "Resume" },
+    { href: "https://www.youtube.com/channel/UCCiIo5ZypN2A4KHNOPOmhLQ", label: "YouTube"}
   ];
 
   return (
