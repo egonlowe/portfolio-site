@@ -5,18 +5,18 @@ import Image from "next/image";
 export default function Home() {
   const news = [
     {
+      title: "Keyword Bot Development Continues",
+      date: "November 2025",
+      description:
+        "The project is currently in its first major milestone: a fully functional NLP-driven heuristic engine that analyzes a video’s title and categories, identifies the most relevant videos in a dataset, and generates an intelligent keyword pool. This foundation sets the stage for the next phase, where a Genetic Algorithm will refine these keywords into an optimized, 500-character YouTube-ready set.",
+      image: "/recentNews/youtubeLogo.jpg",
+    },
+    {
       title: "Attended the 2025 Southeastern SAS Users Group Convention",
       date: "September 22-24, 2025",
       description:
         "I’m attending the SESUG Conference, a regional event for SAS users in the southeastern U.S. The conference offers workshops, presentations, and networking opportunities to build skills and connect with the SAS community.",
       image: "/recentNews/SESUG.jpg",
-    },
-    {
-      title: "ThumbsUp Project Begins Development",
-      date: "August 2025",
-      description:
-        "Development for ThumbsUp, an Apple Watch “likes” prototype inspired by Death Stranding, is officially underway! The first phase focuses on wrist-based interactions with responsive haptics, animations, and sound effects. Stay tuned as I bring this immersive experience to life.",
-      image: "/recentNews/SamDeathStranding.png",
     },
     {
       title: "Concluded ODFL Summer Internship",

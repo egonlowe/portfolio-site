@@ -5,7 +5,28 @@ import Image from "next/image";
 export default function ProjectsPage() {
   const projects = [
     {
-      title: "ThumbsUp - An Apple Watch 'Likes' System (In Progress)",
+      title: "Keyword Bot: An AI YouTube Video Keyword Generator",
+      description:
+        "A smart, AI keyword generator that reads your YouTube video title, compares it to a dataset of real videos, and builds a pool of highly relevant tags. It currently uses custom NLP heuristics for relevance scoring, with a Genetic Algorithm coming next to polish everything into a perfect 500-character keyword list.",
+      tech: ["Python 3", "NumPy", "SpaCy", "Genetic Algorithms"],
+      image: "/recentNews/youtubeLogo.jpg",
+      github: "https://github.com/egonlowe/youtube_keyword_bot.git", // placeholder
+      demo: null,
+      status: "In Development",
+      snippet: `
+# ===============================================
+# 1. TITLE SEMANTIC SIMILARITY (weak weight)
+# ===============================================
+row_tokens = self.tp.tokenize(entry.title)
+row_vec = self.tp.vectorize(row_tokens)
+title_sim = self.tp.similarity(input_vec, row_vec)
+      if title_sim < 0:
+          title_sim = 0.0
+`,
+    },
+    
+    {
+      title: "ThumbsUp - An Apple Watch 'Likes' System",
       description:
         "An Apple Watch app prototype inspired by the 'likes' system in Death Stranding. This app allows users to send 'likes' to one another over local AirDrop connections, triggered by natural hand and wrist movements resembling a thumbs-up gesture. The goal is to bring a playful, gamified way of expressing gratitude to everyday interactions.",
       tech: ["Swift", "WatchOS", "Motion Sensors", "Haptics"],
@@ -25,18 +46,6 @@ motionManager.startDeviceMotionUpdates(to: .main) { motion, error in
 `,
     },
     {
-      title: "BreakOut!",
-      description:
-        "A project for software design in which we were tasked to recreate the ever-popular game breakout.",
-      tech: ["Java", "JavaFX"],
-      image: "/projects/likesSimulator.png",
-      github: "https://github.com/yourusername/LikesSimulator", // placeholder
-      demo: null,
-      status: "In Development",
-      snippet: `
-`,
-    },
-    {
       title: "Office Space Rent Predictor",
       description:
         "A Shiny web app built using R to predict commercial lease prices based on building size, industry type, move type, and location. Uses real data from the 2025 Elon Data Nexus DataFest competition.",
@@ -44,6 +53,7 @@ motionManager.startDeviceMotionUpdates(to: .main) { motion, error in
       image: "/projects/ShinyAppScreenshot.png",
       github: "https://github.com/egonlowe/shinyApp-leasePredict",
       demo: "https://elowe.shinyapps.io/OfficeSpaceRentPredictor/",
+      status: "Completed",
       snippet: `
 library(shiny)
 ui <- fluidPage(
@@ -60,7 +70,7 @@ ui <- fluidPage(
 )
 `,
     },
-   {
+    {
       title: "NBA Analytics - Indiana Pacers Assist Efficiency",
       description:
         "A Google Colab project and research paper analyzing the assist distribution of the 2023–24 Indiana Pacers, before and after the Pascal Siakam trade. Using gramian matrices, I quantified passing relationships to measure changes in offensive flow, identified which players became the most common assist targets, and highlighted how roster moves impacted team efficiency.",
@@ -69,6 +79,7 @@ ui <- fluidPage(
       github: "https://github.com/egonlowe/pacersAssists",
       demo: null,
       paper: "/files/pacersOffensiveEfficiency.pdf",
+      status: "Completed",
       snippet: `
 import pandas as pd
 import numpy as np
@@ -86,7 +97,7 @@ for _, row in df.iterrows():
     gram_matrix.loc[row["passer"], row["receiver"]] += 1
 
 print(gram_matrix.head())
-`
+`,
     },
   ];
 
@@ -111,7 +122,23 @@ print(gram_matrix.head())
         >
           {/* Left column - text */}
           <div className="flex-1 text-left space-y-4">
-            <h2 className="text-3xl font-bold text-primary">{project.title}</h2>
+            <div className="flex items-center justify-between">
+              <h2 className="text-3xl font-bold text-primary">{project.title}</h2>
+              {project.status && (
+                <span
+                  className={`px-3 py-1 text-sm font-semibold rounded-full whitespace-nowrap
+                    ${
+                      project.status === "In Development"
+                        ? "bg-[#52796F] text-[#CAD2C5]"
+                        : project.status === "Completed"
+                        ? "bg-[#354F52] text-[#CAD2C5]"
+                        : "bg-[#2F3E46] text-[#CAD2C5]" // fallback or future use
+                    }`}
+                >
+                  {project.status}
+                </span>
+              )}
+            </div>
             <p className="text-lg text-text">{project.description}</p>
             <p className="text-sm text-secondary">
               <strong>Tech:</strong> {project.tech.join(", ")}
