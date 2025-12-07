@@ -10,9 +10,9 @@ export default function ProjectsPage() {
         "A smart, AI keyword generator that reads your YouTube video title, compares it to a dataset of real videos, and builds a pool of highly relevant tags. It currently uses custom NLP heuristics for relevance scoring, with a Genetic Algorithm coming next to polish everything into a perfect 500-character keyword list.",
       tech: ["Python 3", "NumPy", "SpaCy", "Genetic Algorithms"],
       image: "/recentNews/youtubeLogo.jpg",
-      github: "https://github.com/egonlowe/youtube_keyword_bot.git", // placeholder
+      github: "https://github.com/egonlowe/youtube_keyword_bot.git", 
       demo: null,
-      status: "In Development",
+      status: "Completed",
       snippet: `
 # ===============================================
 # 1. TITLE SEMANTIC SIMILARITY (weak weight)

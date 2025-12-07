@@ -1,0 +1,703 @@
+Domain to test (e.g. example.com): 
+Domain to test (e.g. example.com): 
+Domain to test (e.g. example.com): 
+Domain to test (e.g. example.com): 
+Domain to test (e.g. example.com): 
+┌───────────────────────────────────────
+├─────── Fetching IP Addresses
+│
+│ ethanjlowe.com IP range: 216.198.79.1, 216.198.79.65, 216.198.79.129, 216.198.79.193, 64.29.17.1, 64.29.17.65, 64.29.17.129, 64.29.17.193
+└───────────────────────────────────────
+
+┌───────────────────────────────────────
+├─────── STARTING
+│
+│ Domain to test: ethanjlowe.com 
+│ Timestamp (UTC): Fri Dec  5 18:20:55 UTC 2025
+│ Timestamp (Local): Fri Dec  5 13:20:55 EST 2025
+└───────────────────────────────────────
+
+┌───────────────────────────────────────
+├─────── IP Information 
+
+
+└───────────────────────────────────────
+
+┌───────────────────────────────────────
+├─────── Testing 216.198.79.1 
+Checking headers via 216.198.79.1
+* Connecting to hostname: 216.198.79.1
+*   Trying 216.198.79.1:443...
+* Connected to 216.198.79.1 (216.198.79.1) port 443
+* ALPN: curl offers h2,http/1.1
+* (304) (OUT), TLS handshake, Client hello (1):
+} [319 bytes data]
+* (304) (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* (304) (IN), TLS handshake, Unknown (8):
+{ [15 bytes data]
+* (304) (IN), TLS handshake, Certificate (11):
+{ [2592 bytes data]
+* (304) (IN), TLS handshake, CERT verify (15):
+{ [264 bytes data]
+* (304) (IN), TLS handshake, Finished (20):
+{ [36 bytes data]
+* (304) (OUT), TLS handshake, Finished (20):
+} [36 bytes data]
+* SSL connection using TLSv1.3 / AEAD-CHACHA20-POLY1305-SHA256 / [blank] / UNDEF
+* ALPN: server accepted h2
+* Server certificate:
+*  subject: CN=ethanjlowe.com
+*  start date: Dec  5 16:39:41 2025 GMT
+*  expire date: Mar  5 16:39:40 2026 GMT
+*  issuer: C=US; O=Let's Encrypt; CN=R12
+*  SSL certificate verify ok.
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://ethanjlowe.com/
+* [HTTP/2] [1] [:method: GET]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: ethanjlowe.com]
+* [HTTP/2] [1] [:path: /]
+* [HTTP/2] [1] [user-agent: curl/8.7.1]
+* [HTTP/2] [1] [accept: */*]
+> GET / HTTP/2
+> Host: ethanjlowe.com
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/2 307 
+< cache-control: public, max-age=0, must-revalidate
+< content-type: text/plain
+< date: Fri, 05 Dec 2025 18:20:56 GMT
+< location: https://www.ethanjlowe.com/
+< server: Vercel
+< strict-transport-security: max-age=63072000
+< x-vercel-id: iad1::z6vkt-1764958856528-4c6033bfd8f9
+< 
+{ [15 bytes data]
+* Connection #0 to host 216.198.79.1 left intact
+
+Checking ping to 216.198.79.1
+PING 216.198.79.1 (216.198.79.1): 56 data bytes
+64 bytes from 216.198.79.1: icmp_seq=0 ttl=247 time=17.364 ms
+64 bytes from 216.198.79.1: icmp_seq=1 ttl=247 time=17.451 ms
+64 bytes from 216.198.79.1: icmp_seq=2 ttl=247 time=20.176 ms
+64 bytes from 216.198.79.1: icmp_seq=3 ttl=247 time=21.331 ms
+
+--- 216.198.79.1 ping statistics ---
+4 packets transmitted, 4 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 17.364/19.081/21.331/1.722 ms
+└───────────────────────────────────────
+
+┌───────────────────────────────────────
+├─────── Testing 216.198.79.65 
+Checking headers via 216.198.79.65
+* Connecting to hostname: 216.198.79.65
+*   Trying 216.198.79.65:443...
+* Connected to 216.198.79.65 (216.198.79.65) port 443
+* ALPN: curl offers h2,http/1.1
+* (304) (OUT), TLS handshake, Client hello (1):
+} [319 bytes data]
+* (304) (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* (304) (IN), TLS handshake, Unknown (8):
+{ [15 bytes data]
+* (304) (IN), TLS handshake, Certificate (11):
+{ [2605 bytes data]
+* (304) (IN), TLS handshake, CERT verify (15):
+{ [264 bytes data]
+* (304) (IN), TLS handshake, Finished (20):
+{ [36 bytes data]
+* (304) (OUT), TLS handshake, Finished (20):
+} [36 bytes data]
+* SSL connection using TLSv1.3 / AEAD-CHACHA20-POLY1305-SHA256 / [blank] / UNDEF
+* ALPN: server accepted h2
+* Server certificate:
+*  subject: CN=*.ethanjlowe.com
+*  start date: Dec  5 17:12:03 2025 GMT
+*  expire date: Mar  5 17:12:02 2026 GMT
+*  issuer: C=US; O=Let's Encrypt; CN=R12
+*  SSL certificate verify ok.
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://ethanjlowe.com/
+* [HTTP/2] [1] [:method: GET]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: ethanjlowe.com]
+* [HTTP/2] [1] [:path: /]
+* [HTTP/2] [1] [user-agent: curl/8.7.1]
+* [HTTP/2] [1] [accept: */*]
+> GET / HTTP/2
+> Host: ethanjlowe.com
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/2 307 
+< cache-control: public, max-age=0, must-revalidate
+< content-type: text/plain
+< date: Fri, 05 Dec 2025 18:20:59 GMT
+< location: https://www.ethanjlowe.com/
+< server: Vercel
+< strict-transport-security: max-age=63072000
+< x-vercel-id: iad1::cptxj-1764958859907-03201901838f
+< 
+{ [15 bytes data]
+* Connection #0 to host 216.198.79.65 left intact
+
+Checking ping to 216.198.79.65
+PING 216.198.79.65 (216.198.79.65): 56 data bytes
+64 bytes from 216.198.79.65: icmp_seq=0 ttl=247 time=17.340 ms
+64 bytes from 216.198.79.65: icmp_seq=1 ttl=247 time=17.249 ms
+64 bytes from 216.198.79.65: icmp_seq=2 ttl=247 time=17.777 ms
+64 bytes from 216.198.79.65: icmp_seq=3 ttl=247 time=17.577 ms
+
+--- 216.198.79.65 ping statistics ---
+4 packets transmitted, 4 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 17.249/17.486/17.777/0.206 ms
+└───────────────────────────────────────
+
+┌───────────────────────────────────────
+├─────── Testing 216.198.79.129 
+Checking headers via 216.198.79.129
+* Connecting to hostname: 216.198.79.129
+*   Trying 216.198.79.129:443...
+* Connected to 216.198.79.129 (216.198.79.129) port 443
+* ALPN: curl offers h2,http/1.1
+* (304) (OUT), TLS handshake, Client hello (1):
+} [319 bytes data]
+* (304) (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* (304) (IN), TLS handshake, Unknown (8):
+{ [15 bytes data]
+* (304) (IN), TLS handshake, Certificate (11):
+{ [2592 bytes data]
+* (304) (IN), TLS handshake, CERT verify (15):
+{ [264 bytes data]
+* (304) (IN), TLS handshake, Finished (20):
+{ [36 bytes data]
+* (304) (OUT), TLS handshake, Finished (20):
+} [36 bytes data]
+* SSL connection using TLSv1.3 / AEAD-CHACHA20-POLY1305-SHA256 / [blank] / UNDEF
+* ALPN: server accepted h2
+* Server certificate:
+*  subject: CN=ethanjlowe.com
+*  start date: Dec  5 16:39:41 2025 GMT
+*  expire date: Mar  5 16:39:40 2026 GMT
+*  issuer: C=US; O=Let's Encrypt; CN=R12
+*  SSL certificate verify ok.
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://ethanjlowe.com/
+* [HTTP/2] [1] [:method: GET]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: ethanjlowe.com]
+* [HTTP/2] [1] [:path: /]
+* [HTTP/2] [1] [user-agent: curl/8.7.1]
+* [HTTP/2] [1] [accept: */*]
+> GET / HTTP/2
+> Host: ethanjlowe.com
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/2 307 
+< cache-control: public, max-age=0, must-revalidate
+< content-type: text/plain
+< date: Fri, 05 Dec 2025 18:21:03 GMT
+< location: https://www.ethanjlowe.com/
+< server: Vercel
+< strict-transport-security: max-age=63072000
+< x-vercel-id: iad1::jbkpb-1764958863345-84135225f86b
+< 
+{ [15 bytes data]
+* Connection #0 to host 216.198.79.129 left intact
+
+Checking ping to 216.198.79.129
+PING 216.198.79.129 (216.198.79.129): 56 data bytes
+64 bytes from 216.198.79.129: icmp_seq=0 ttl=247 time=17.572 ms
+64 bytes from 216.198.79.129: icmp_seq=1 ttl=247 time=21.641 ms
+64 bytes from 216.198.79.129: icmp_seq=2 ttl=247 time=22.283 ms
+64 bytes from 216.198.79.129: icmp_seq=3 ttl=247 time=19.988 ms
+
+--- 216.198.79.129 ping statistics ---
+4 packets transmitted, 4 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 17.572/20.371/22.283/1.820 ms
+└───────────────────────────────────────
+
+┌───────────────────────────────────────
+├─────── Testing 216.198.79.193 
+Checking headers via 216.198.79.193
+* Connecting to hostname: 216.198.79.193
+*   Trying 216.198.79.193:443...
+* Connected to 216.198.79.193 (216.198.79.193) port 443
+* ALPN: curl offers h2,http/1.1
+* (304) (OUT), TLS handshake, Client hello (1):
+} [319 bytes data]
+* (304) (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* (304) (IN), TLS handshake, Unknown (8):
+{ [15 bytes data]
+* (304) (IN), TLS handshake, Certificate (11):
+{ [2605 bytes data]
+* (304) (IN), TLS handshake, CERT verify (15):
+{ [264 bytes data]
+* (304) (IN), TLS handshake, Finished (20):
+{ [36 bytes data]
+* (304) (OUT), TLS handshake, Finished (20):
+} [36 bytes data]
+* SSL connection using TLSv1.3 / AEAD-CHACHA20-POLY1305-SHA256 / [blank] / UNDEF
+* ALPN: server accepted h2
+* Server certificate:
+*  subject: CN=*.ethanjlowe.com
+*  start date: Dec  5 17:12:03 2025 GMT
+*  expire date: Mar  5 17:12:02 2026 GMT
+*  issuer: C=US; O=Let's Encrypt; CN=R12
+*  SSL certificate verify ok.
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://ethanjlowe.com/
+* [HTTP/2] [1] [:method: GET]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: ethanjlowe.com]
+* [HTTP/2] [1] [:path: /]
+* [HTTP/2] [1] [user-agent: curl/8.7.1]
+* [HTTP/2] [1] [accept: */*]
+> GET / HTTP/2
+> Host: ethanjlowe.com
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/2 307 
+< cache-control: public, max-age=0, must-revalidate
+< content-type: text/plain
+< date: Fri, 05 Dec 2025 18:21:06 GMT
+< location: https://www.ethanjlowe.com/
+< server: Vercel
+< strict-transport-security: max-age=63072000
+< x-vercel-id: iad1::6g827-1764958866766-6f9cee1600f0
+< 
+{ [15 bytes data]
+* Connection #0 to host 216.198.79.193 left intact
+
+Checking ping to 216.198.79.193
+PING 216.198.79.193 (216.198.79.193): 56 data bytes
+64 bytes from 216.198.79.193: icmp_seq=0 ttl=247 time=17.691 ms
+64 bytes from 216.198.79.193: icmp_seq=1 ttl=247 time=17.428 ms
+64 bytes from 216.198.79.193: icmp_seq=2 ttl=247 time=17.272 ms
+64 bytes from 216.198.79.193: icmp_seq=3 ttl=247 time=17.463 ms
+
+--- 216.198.79.193 ping statistics ---
+4 packets transmitted, 4 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 17.272/17.463/17.691/0.150 ms
+└───────────────────────────────────────
+
+┌───────────────────────────────────────
+├─────── Testing 64.29.17.1 
+Checking headers via 64.29.17.1
+* Connecting to hostname: 64.29.17.1
+*   Trying 64.29.17.1:443...
+* Connected to 64.29.17.1 (64.29.17.1) port 443
+* ALPN: curl offers h2,http/1.1
+* (304) (OUT), TLS handshake, Client hello (1):
+} [319 bytes data]
+* (304) (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* (304) (IN), TLS handshake, Unknown (8):
+{ [15 bytes data]
+* (304) (IN), TLS handshake, Certificate (11):
+{ [2592 bytes data]
+* (304) (IN), TLS handshake, CERT verify (15):
+{ [264 bytes data]
+* (304) (IN), TLS handshake, Finished (20):
+{ [36 bytes data]
+* (304) (OUT), TLS handshake, Finished (20):
+} [36 bytes data]
+* SSL connection using TLSv1.3 / AEAD-CHACHA20-POLY1305-SHA256 / [blank] / UNDEF
+* ALPN: server accepted h2
+* Server certificate:
+*  subject: CN=ethanjlowe.com
+*  start date: Dec  5 16:39:41 2025 GMT
+*  expire date: Mar  5 16:39:40 2026 GMT
+*  issuer: C=US; O=Let's Encrypt; CN=R12
+*  SSL certificate verify ok.
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://ethanjlowe.com/
+* [HTTP/2] [1] [:method: GET]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: ethanjlowe.com]
+* [HTTP/2] [1] [:path: /]
+* [HTTP/2] [1] [user-agent: curl/8.7.1]
+* [HTTP/2] [1] [accept: */*]
+> GET / HTTP/2
+> Host: ethanjlowe.com
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/2 307 
+< cache-control: public, max-age=0, must-revalidate
+< content-type: text/plain
+< date: Fri, 05 Dec 2025 18:21:10 GMT
+< location: https://www.ethanjlowe.com/
+< server: Vercel
+< strict-transport-security: max-age=63072000
+< x-vercel-id: iad1::m9647-1764958870209-5edad7f60f91
+< 
+{ [15 bytes data]
+* Connection #0 to host 64.29.17.1 left intact
+
+Checking ping to 64.29.17.1
+PING 64.29.17.1 (64.29.17.1): 56 data bytes
+64 bytes from 64.29.17.1: icmp_seq=0 ttl=244 time=17.342 ms
+64 bytes from 64.29.17.1: icmp_seq=1 ttl=244 time=21.813 ms
+64 bytes from 64.29.17.1: icmp_seq=2 ttl=244 time=21.267 ms
+64 bytes from 64.29.17.1: icmp_seq=3 ttl=244 time=17.243 ms
+
+--- 64.29.17.1 ping statistics ---
+4 packets transmitted, 4 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 17.243/19.416/21.813/2.133 ms
+└───────────────────────────────────────
+
+┌───────────────────────────────────────
+├─────── Testing 64.29.17.65 
+Checking headers via 64.29.17.65
+* Connecting to hostname: 64.29.17.65
+*   Trying 64.29.17.65:443...
+* Connected to 64.29.17.65 (64.29.17.65) port 443
+* ALPN: curl offers h2,http/1.1
+* (304) (OUT), TLS handshake, Client hello (1):
+} [319 bytes data]
+* (304) (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* (304) (IN), TLS handshake, Unknown (8):
+{ [15 bytes data]
+* (304) (IN), TLS handshake, Certificate (11):
+{ [2605 bytes data]
+* (304) (IN), TLS handshake, CERT verify (15):
+{ [264 bytes data]
+* (304) (IN), TLS handshake, Finished (20):
+{ [36 bytes data]
+* (304) (OUT), TLS handshake, Finished (20):
+} [36 bytes data]
+* SSL connection using TLSv1.3 / AEAD-CHACHA20-POLY1305-SHA256 / [blank] / UNDEF
+* ALPN: server accepted h2
+* Server certificate:
+*  subject: CN=*.ethanjlowe.com
+*  start date: Dec  5 17:12:03 2025 GMT
+*  expire date: Mar  5 17:12:02 2026 GMT
+*  issuer: C=US; O=Let's Encrypt; CN=R12
+*  SSL certificate verify ok.
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://ethanjlowe.com/
+* [HTTP/2] [1] [:method: GET]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: ethanjlowe.com]
+* [HTTP/2] [1] [:path: /]
+* [HTTP/2] [1] [user-agent: curl/8.7.1]
+* [HTTP/2] [1] [accept: */*]
+> GET / HTTP/2
+> Host: ethanjlowe.com
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/2 307 
+< cache-control: public, max-age=0, must-revalidate
+< content-type: text/plain
+< date: Fri, 05 Dec 2025 18:21:13 GMT
+< location: https://www.ethanjlowe.com/
+< server: Vercel
+< strict-transport-security: max-age=63072000
+< x-vercel-id: iad1::ng6g6-1764958873588-d0f4ba7fd514
+< 
+{ [15 bytes data]
+* Connection #0 to host 64.29.17.65 left intact
+
+Checking ping to 64.29.17.65
+PING 64.29.17.65 (64.29.17.65): 56 data bytes
+64 bytes from 64.29.17.65: icmp_seq=0 ttl=244 time=17.302 ms
+64 bytes from 64.29.17.65: icmp_seq=1 ttl=244 time=24.533 ms
+64 bytes from 64.29.17.65: icmp_seq=2 ttl=244 time=18.192 ms
+64 bytes from 64.29.17.65: icmp_seq=3 ttl=244 time=17.309 ms
+
+--- 64.29.17.65 ping statistics ---
+4 packets transmitted, 4 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 17.302/19.334/24.533/3.023 ms
+└───────────────────────────────────────
+
+┌───────────────────────────────────────
+├─────── Testing 64.29.17.129 
+Checking headers via 64.29.17.129
+* Connecting to hostname: 64.29.17.129
+*   Trying 64.29.17.129:443...
+* Connected to 64.29.17.129 (64.29.17.129) port 443
+* ALPN: curl offers h2,http/1.1
+* (304) (OUT), TLS handshake, Client hello (1):
+} [319 bytes data]
+* (304) (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* (304) (IN), TLS handshake, Unknown (8):
+{ [15 bytes data]
+* (304) (IN), TLS handshake, Certificate (11):
+{ [2592 bytes data]
+* (304) (IN), TLS handshake, CERT verify (15):
+{ [264 bytes data]
+* (304) (IN), TLS handshake, Finished (20):
+{ [36 bytes data]
+* (304) (OUT), TLS handshake, Finished (20):
+} [36 bytes data]
+* SSL connection using TLSv1.3 / AEAD-CHACHA20-POLY1305-SHA256 / [blank] / UNDEF
+* ALPN: server accepted h2
+* Server certificate:
+*  subject: CN=ethanjlowe.com
+*  start date: Dec  5 16:39:41 2025 GMT
+*  expire date: Mar  5 16:39:40 2026 GMT
+*  issuer: C=US; O=Let's Encrypt; CN=R12
+*  SSL certificate verify ok.
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://ethanjlowe.com/
+* [HTTP/2] [1] [:method: GET]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: ethanjlowe.com]
+* [HTTP/2] [1] [:path: /]
+* [HTTP/2] [1] [user-agent: curl/8.7.1]
+* [HTTP/2] [1] [accept: */*]
+> GET / HTTP/2
+> Host: ethanjlowe.com
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/2 307 
+< cache-control: public, max-age=0, must-revalidate
+< content-type: text/plain
+< date: Fri, 05 Dec 2025 18:21:16 GMT
+< location: https://www.ethanjlowe.com/
+< server: Vercel
+< strict-transport-security: max-age=63072000
+< x-vercel-id: iad1::9nftj-1764958876941-347a8ae50a84
+< 
+{ [15 bytes data]
+* Connection #0 to host 64.29.17.129 left intact
+
+Checking ping to 64.29.17.129
+PING 64.29.17.129 (64.29.17.129): 56 data bytes
+64 bytes from 64.29.17.129: icmp_seq=0 ttl=244 time=17.268 ms
+64 bytes from 64.29.17.129: icmp_seq=1 ttl=244 time=23.160 ms
+64 bytes from 64.29.17.129: icmp_seq=2 ttl=244 time=17.067 ms
+64 bytes from 64.29.17.129: icmp_seq=3 ttl=244 time=33.295 ms
+
+--- 64.29.17.129 ping statistics ---
+4 packets transmitted, 4 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 17.067/22.697/33.295/6.590 ms
+└───────────────────────────────────────
+
+┌───────────────────────────────────────
+├─────── Testing 64.29.17.193 
+Checking headers via 64.29.17.193
+* Connecting to hostname: 64.29.17.193
+*   Trying 64.29.17.193:443...
+* Connected to 64.29.17.193 (64.29.17.193) port 443
+* ALPN: curl offers h2,http/1.1
+* (304) (OUT), TLS handshake, Client hello (1):
+} [319 bytes data]
+* (304) (IN), TLS handshake, Server hello (2):
+{ [122 bytes data]
+* (304) (IN), TLS handshake, Unknown (8):
+{ [15 bytes data]
+* (304) (IN), TLS handshake, Certificate (11):
+{ [2592 bytes data]
+* (304) (IN), TLS handshake, CERT verify (15):
+{ [264 bytes data]
+* (304) (IN), TLS handshake, Finished (20):
+{ [36 bytes data]
+* (304) (OUT), TLS handshake, Finished (20):
+} [36 bytes data]
+* SSL connection using TLSv1.3 / AEAD-CHACHA20-POLY1305-SHA256 / [blank] / UNDEF
+* ALPN: server accepted h2
+* Server certificate:
+*  subject: CN=ethanjlowe.com
+*  start date: Dec  5 16:39:41 2025 GMT
+*  expire date: Mar  5 16:39:40 2026 GMT
+*  issuer: C=US; O=Let's Encrypt; CN=R12
+*  SSL certificate verify ok.
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://ethanjlowe.com/
+* [HTTP/2] [1] [:method: GET]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: ethanjlowe.com]
+* [HTTP/2] [1] [:path: /]
+* [HTTP/2] [1] [user-agent: curl/8.7.1]
+* [HTTP/2] [1] [accept: */*]
+> GET / HTTP/2
+> Host: ethanjlowe.com
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/2 307 
+< cache-control: public, max-age=0, must-revalidate
+< content-type: text/plain
+< date: Fri, 05 Dec 2025 18:21:20 GMT
+< location: https://www.ethanjlowe.com/
+< server: Vercel
+< strict-transport-security: max-age=63072000
+< x-vercel-id: iad1::kx58t-1764958880317-86a2d05e4277
+< 
+{ [15 bytes data]
+* Connection #0 to host 64.29.17.193 left intact
+
+Checking ping to 64.29.17.193
+PING 64.29.17.193 (64.29.17.193): 56 data bytes
+64 bytes from 64.29.17.193: icmp_seq=0 ttl=244 time=17.301 ms
+64 bytes from 64.29.17.193: icmp_seq=1 ttl=244 time=21.606 ms
+64 bytes from 64.29.17.193: icmp_seq=2 ttl=244 time=21.352 ms
+64 bytes from 64.29.17.193: icmp_seq=3 ttl=244 time=17.387 ms
+
+--- 64.29.17.193 ping statistics ---
+4 packets transmitted, 4 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 17.301/19.412/21.606/2.070 ms
+└───────────────────────────────────────
+
+┌───────────────────────────────────────
+├─────── dig ethanjlowe.com 
+
+
+; <<>> DiG 9.10.6 <<>> ethanjlowe.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 53453
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1410
+;; QUESTION SECTION:
+;ethanjlowe.com.			IN	A
+
+;; ANSWER SECTION:
+ethanjlowe.com.		0	IN	A	146.112.61.110
+
+;; Query time: 14 msec
+;; SERVER: 10.17.0.10#53(10.17.0.10)
+;; WHEN: Fri Dec 05 13:21:23 EST 2025
+;; MSG SIZE  rcvd: 59
+
+└───────────────────────────────────────
+
+┌───────────────────────────────────────
+├─────── dig ethanjlowe.com via 8.8.8.8
+
+
+; <<>> DiG 9.10.6 <<>> ethanjlowe.com @8.8.8.8
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 18956
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1410
+;; QUESTION SECTION:
+;ethanjlowe.com.			IN	A
+
+;; ANSWER SECTION:
+ethanjlowe.com.		0	IN	A	146.112.61.110
+
+;; Query time: 15 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8)
+;; WHEN: Fri Dec 05 13:21:23 EST 2025
+;; MSG SIZE  rcvd: 59
+
+└───────────────────────────────────────
+
+┌───────────────────────────────────────
+├─────── dig ethanjlowe.com via trace
+
+
+; <<>> DiG 9.10.6 <<>> ethanjlowe.com +trace
+;; global options: +cmd
+.			518400	IN	NS	a.root-servers.net.
+.			518400	IN	NS	b.root-servers.net.
+.			518400	IN	NS	c.root-servers.net.
+.			518400	IN	NS	d.root-servers.net.
+.			518400	IN	NS	e.root-servers.net.
+.			518400	IN	NS	f.root-servers.net.
+.			518400	IN	NS	g.root-servers.net.
+.			518400	IN	NS	h.root-servers.net.
+.			518400	IN	NS	i.root-servers.net.
+.			518400	IN	NS	j.root-servers.net.
+.			518400	IN	NS	k.root-servers.net.
+.			518400	IN	NS	l.root-servers.net.
+.			518400	IN	NS	m.root-servers.net.
+;; Received 239 bytes from 10.17.0.10#53(10.17.0.10) in 15 ms
+
+ethanjlowe.com.		0	IN	A	146.112.61.110
+;; Received 59 bytes from 198.41.0.4#53(a.root-servers.net) in 16 ms
+
+└───────────────────────────────────────
+
+┌───────────────────────────────────────
+├─────── Output of ethanjlowe.com
+
+* Host ethanjlowe.com:443 was resolved.
+* IPv6: (none)
+* IPv4: 146.112.61.110
+*   Trying 146.112.61.110:443...
+* Connected to ethanjlowe.com (146.112.61.110) port 443
+* ALPN: curl offers h2,http/1.1
+* (304) (OUT), TLS handshake, Client hello (1):
+} [319 bytes data]
+* (304) (IN), TLS handshake, Server hello (2):
+{ [85 bytes data]
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+{ [3154 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+{ [4 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+} [262 bytes data]
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+} [16 bytes data]
+* TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):
+{ [1 bytes data]
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+{ [16 bytes data]
+* SSL connection using TLSv1.2 / AES256-GCM-SHA384 / [blank] / UNDEF
+* ALPN: server did not agree on a protocol. Uses default.
+* Server certificate:
+*  subject: C=US; ST=California; L=San Francisco; O=OpenDNS, Inc.; CN=ethanjlowe.com
+*  start date: Dec  3 18:04:57 2025 GMT
+*  expire date: Dec  8 18:04:57 2025 GMT
+*  issuer: O=Cisco; CN=Cisco Umbrella Secondary SubCA ash-SG
+*  SSL certificate verify result: unable to get local issuer certificate (20), continuing anyway.
+* using HTTP/1.x
+> GET / HTTP/1.1
+> Host: ethanjlowe.com
+> User-Agent: curl/8.7.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/1.1 403 Forbidden
+< Server: Cisco Umbrella
+< Date: Fri, 05 Dec 2025 18:21:23 GMT
+< Content-Type: text/html
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< 
+{ [526 bytes data]
+<html><head><script type="text/javascript">location.replace("https://malware.opendns.com/?url=ethanjlowe.com&server=ash2&prefs=&tagging=&nref");</script></head></html>                                                                                                                                                                                                                                                                                                                                                          
+* Connection #0 to host ethanjlowe.com left intact
+
+└───────────────────────────────────────
+
+
+┌───────────────────────────────────────
+│ Time elapsed: 28 seconds
+│
+├─────── FINISHED
+└───────────────────────────────────────
+
+
+
+File can be found at /Users/ethanlowe/Documents/PortfolioSite/portfolio-site/vercel-debug.txt
+
