@@ -5,10 +5,10 @@ import Image from "next/image";
 export default function Home() {
   const news = [
     {
-      title: "Keyword Bot Development Continues",
-      date: "November 2025",
+      title: "Keyword Bot Development Completes",
+      date: "December 2025",
       description:
-        "The project is currently in its first major milestone: a fully functional NLP-driven heuristic engine that analyzes a video’s title and categories, identifies the most relevant videos in a dataset, and generates an intelligent keyword pool. This foundation sets the stage for the next phase, where a Genetic Algorithm will refine these keywords into an optimized, 500-character YouTube-ready set.",
+        "The YouTube Keyword Optimization Bot is officially complete! It now generates smart, SEO-friendly keyword lists using a hybrid heuristic and genetic algorithm system.",
       image: "/recentNews/youtubeLogo.jpg",
     },
     {

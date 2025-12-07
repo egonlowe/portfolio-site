@@ -96,7 +96,7 @@ export default function Resume() {
               of my professional experience, skills, and education.
             </p>
             <a
-              href="/files/ResumeSept2025.pdf"
+              href="/files/ethanResumeDec2025.pdf"
               target="_blank"
               rel="noopener noreferrer"
               download
