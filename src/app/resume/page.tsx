@@ -11,7 +11,7 @@ export default function Resume() {
         "Provide tutoring and technical assistance to Elon students across statistics, data science, and analytics. Specializing in R, SAS, Excel, SQL, and other analytical tools. Support students in developing problem-solving approaches with data and software.",
     },
     {
-      role: "Old Dominion Freight Line - Data Engineer Intern",
+      role: "Old Dominion Freight Line - QA Test Automation Intern",
       date: "June 2025 - August 2025",
       description:
         "Worked with the QA Test Automation team to design and develop an automated testing framework using Appium and Selenium. This framework will support quality assurance efforts for newly updated mobile software and lay the foundation for future testing across ODFL's suite of mobile applications.",
